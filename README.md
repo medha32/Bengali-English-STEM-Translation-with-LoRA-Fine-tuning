@@ -41,13 +41,14 @@ Term accuracy (STEM glossary match)
 
 
 # Sample Prediction
-| id | english_question                                                                                                        |
-| -- | ----------------------------------------------------------------------------------------------------------------------- |
-| 1  | If blood pressure is 115/80 mmHg; what is the pulse pressure?                                                           |
-| 2  | What is the required force in newtons to move an object to a distance of 20 m with a force of 150 J?                    |
-| 3  | If a rectangle has a length of 21 cm and a width of 30 cm; what is its area in square centimeters?                      |
-| 4  | If a DNA molecule contains 36% adenine; what is the percentage amount of thymine?                                       |
-| 5  | How many moles are there in 45 g CH3COOH? (molecular mass = 60.0)                                                       |
+| id | english_question                                                                                     | bangla_question                                                                     |
+| -- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 1  | If blood pressure is 115/80 mmHg; what is the pulse pressure?                                        | রক্তচাপ 115/80 mmHg হলে পালস প্রেসার কত?                                            |
+| 2  | What is the required force in newtons to move an object to a distance of 20 m with a force of 150 J? | 150 J কাজ করে একটি বস্তুকে 20 m দূরত্বে স্থানান্তরিত করতে প্রয়োজনীয় বল কত নিউটন?  |
+| 3  | If a rectangle has a length of 21 cm and a width of 30 cm; what is its area in square centimeters?   | একটি আয়তক্ষেত্রের দৈর্ঘ্য 21 cm এবং প্রস্থ 30 cm হলে ক্ষেত্রফল কত বর্গসেন্টিমিটার? |
+| 4  | If a DNA molecule contains 36% adenine; what is the percentage amount of thymine?                    | DNA অণুতে যদি অ্যাডেনিন 36% থাকে, তাহলে থাইমিনের শতকরা পরিমাণ কত?                   |
+| 5  | How many moles are there in 45 g CH3COOH? (molecular mass = 60.0)                                    | 45 g CH₃COOH এ কতগুলি মোল পদার্থ আছে? (আণবিক ভর = 60.0)                             |
+
 
 
 
