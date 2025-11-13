@@ -1,17 +1,17 @@
 # Bengali-STEM-Translation-Challenge
 
-#🔎 Project Overview
+**#🔎 Project Overview**
 
-#Overview
+**#Overview**
 Build a robust Bengali → English translation system for HSC-level STEM questions using LoRA fine-tuning of Meta's NLLB model. The dataset contains 5,000 Bengali–English paired STEM questions.
 
 
-#🧠 Model Architecture & Approach
+**#🧠 Model Architecture & Approach**
 
 To tackle the Bengali → English STEM translation challenge, we built upon Meta’s NLLB (No Language Left Behind) model — specifically the facebook/nllb-200-distilled-600M checkpoint — known for supporting 200 languages and excelling in low-resource translation.
 However, since NLLB is trained for general-purpose translation, it often struggles with domain-specific terminology (e.g., physics, chemistry, and math terms in HSC textbooks). To address this, we applied LoRA (Low-Rank Adaptation) fine-tuning to specialize the model on our dataset.
 
-#⚙️ Architecture Details
+**#⚙️ Architecture Details**
 
 Base Model: facebook/nllb-200-distilled-600M
 
