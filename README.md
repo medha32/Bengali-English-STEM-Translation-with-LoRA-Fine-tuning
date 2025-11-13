@@ -9,24 +9,59 @@ Build a robust Bengali → English translation system for HSC-level STEM questio
 
 To tackle the Bengali → English STEM translation challenge, we built upon Meta’s NLLB (No Language Left Behind) model — specifically the facebook/nllb-200-distilled-600M checkpoint — known for supporting 200 languages and excelling in low-resource translation.
 However, since NLLB is trained for general-purpose translation, it often struggles with domain-specific terminology (e.g., physics, chemistry, and math terms in HSC textbooks). To address this, we applied LoRA (Low-Rank Adaptation) fine-tuning to specialize the model on our dataset.
+| Component              | Description                           |
+| ---------------------- | ------------------------------------- |
+| **Base model**         | `facebook/nllb-200-1.3B`              |
+| **Architecture**       | Transformer Encoder-Decoder (Seq2Seq) |
+| **Fine-tuning method** | LoRA via Hugging Face PEFT            |
+| **Target modules**     | `q_proj`, `v_proj` (attention layers) |
+| **LoRA parameters**    | `r = 16`, `α = 32`, dropout = 0.05    |
+| **Optimizer**          | AdamW                                 |
+| **Precision**          | FP16                                  |
+| **Epochs**             | 30                                    |
+| **Batch size**         | 8                                     |
+| **Learning rate**      | 2 × 10⁻⁴                              |
+| **Languages**          | `ben_Latn → eng_Latn`                 |
 
-# **⚙️ Architecture Details**
 
-Base Model: facebook/nllb-200-distilled-600M
+# **📊 Evaluation**
 
-Architecture Type: Transformer-based Encoder–Decoder (Seq2Seq)
+Metrics used:
 
-Parameter Count: ~600M
+BLEU
 
-Tokenizer: SentencePiece multilingual tokenizer trained on NLLB corpus
+chrF
 
-Fine-tuning Method: Parameter-efficient LoRA using PEFT
+Term accuracy (STEM glossary match)
 
-Training Framework: Hugging Face Transformers with PyTorch backend
+| Model       | chrF | BLEU | Term Accuracy |
+| ----------- | ---- | ---- | ------------- |
+| NLLB-base   | 45.2 | 18.1 | 64.5 %        |
+| NLLB + LoRA | 52.7 | 26.9 | 78.2 %        |
 
-Optimizer: AdamW
+# 💡 Key Insights
 
-Scheduler: Cosine learning rate decay with warmup steps
+LoRA fine-tuning enabled efficient specialization with <1 % parameter updates.
 
-Precision: Mixed precision (FP16 / bf16)
+Strong improvement on STEM terminology translation (“বিকিরণ” → Radiation, “সমচাপ প্রক্রিয়া” → Isobaric process).
 
+Demonstrated how domain adaptation can enhance multilingual models for low-resource educational data.
+
+# 🧩 Tech Stack
+
+Python 3.12
+
+PyTorch + Hugging Face Transformers
+
+PEFT (LoRA)
+
+Datasets
+
+Google Colab / Kaggle Notebook environment
+
+
+# 👥 Team NeuralSight
+
+🧑‍💻 Nuzhat Tabassum
+
+👨‍💻 Utpal Barua
